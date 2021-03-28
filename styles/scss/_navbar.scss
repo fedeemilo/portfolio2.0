@@ -1,0 +1,53 @@
+%anchor-style {
+  color: $white;
+  text-decoration: none;
+  margin-left: 2.4rem;
+}
+
+.navbar {
+  @include alignCenter();
+  background: $midnight;
+  color: $white;
+  height: 8.5rem;
+  list-style: none;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+
+  &__brand {
+    width: 50%;
+  list-style: none;
+    a {
+      @extend %anchor-style;
+      font-size: $fsBrand;
+    }
+  }
+
+  &__links {
+    text-transform: uppercase;
+    list-style: none;
+    @include flexCenter();
+
+    li {
+      a {
+        @extend %anchor-style;
+        margin-left: 3.6rem;
+        transition: 500ms;
+        position: relative;
+
+        &:hover {
+          color: $white;
+          opacity: 0.8;
+
+          &::after {
+            opacity: 1;
+          }
+        }
+
+        &::after {
+          @include hoverNavLink();
+        }
+      }
+    }
+  }
+}

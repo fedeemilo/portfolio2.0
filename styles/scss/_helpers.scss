@@ -1,0 +1,16 @@
+.navitem-selected {
+  content: "";
+  border-radius: 10px;
+  background: linear-gradient(to right, #ff6187, $red-violet);
+  transition: opacity 300ms ease-in-out;
+  padding: 7px;
+}
+
+.f-bold {
+  font-weight: bold;
+}
+
+// Colors
+.milo-red {
+  color: $red-violet;
+}

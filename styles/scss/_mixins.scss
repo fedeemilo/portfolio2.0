@@ -1,0 +1,64 @@
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    } @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
+@mixin flexDirectionCol() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexEnd {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flexStart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin alignCenter() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin justifyAround() {
+  display: flex;
+  justify-content: space-around;
+}
+
+@mixin justifyBetween() {
+  display: flex;
+  justify-content: space-between;
+}
+
+// When the user hovers a nav link, it shows a thick line under it
+@mixin hoverNavLink() {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 5px;
+  border-radius: 10px;
+  background: linear-gradient(to right, $white, $red-violet);
+  left: 0;
+  right: 0;
+  bottom: -0.5rem;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
